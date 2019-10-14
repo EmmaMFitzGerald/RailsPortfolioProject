@@ -1,6 +1,6 @@
 
-<%= @memory.title %>
-<%= @memory.category.name %>
-<%= @memory.content %>
-<%= @memory.memory_date %>
+Memory: <%= @memory.title %><br>
+Memory Category: <%= @memory.category.name %><br>
+Memory Details: <%= @memory.content %><br>
+Date: <%= @memory.memory_date %><br>
 <%= link_to "Back to Child's Memories", child_path%>

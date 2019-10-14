@@ -1,5 +1,10 @@
-<% @memories.each do |memory|%>
-    <%= memory.title %>
-    <%= memory.content %>
-    <%= memory.memory_date %>
+<% if @memories.any? %>
+    <% @memories.each do |memory|%>
+        <%= memory.child.name %>
+        <%= memory.title %>
+        <%= memory.content %>
+        <%= memory.memory_date %>
+    <% end %>
+<% else %>
+    No memories have been made for this category yet! <%= link_to "Back to see categories", categories_path %>
 <% end %>

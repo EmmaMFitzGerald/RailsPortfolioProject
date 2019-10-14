@@ -7,6 +7,7 @@ class User < ApplicationRecord
   devise :omniauthable, :omniauth_providers => [:facebook]
   has_many :children
   has_many :memories
+  has_many :categories, through: :memories
   has_many :children_with_memories, through: :memories, source: :child
    
   def self.from_omniauth(auth)

@@ -25,6 +25,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'pry'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

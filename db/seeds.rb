@@ -39,3 +39,4 @@ Memory.create(title: "Baby's first words", content: "Today the baby said her fir
 Memory.create(title: "Giggle", content: "The baby laughed for the first time today at a funny face", child_id: child_2.id, user_id: user_2.id, category_id: cat_2.id)
 Memory.create(title: "Hiccup", content: "The baby did their first hiccup today", child_id: child_3.id, user_id: user_3.id, category_id: cat_3.id)
 Memory.create(title: "First Day at School", content: "Sarah started school today", child_id: child_4.id, user_id: user_4.id, category_id: cat_4.id)
+                                        
