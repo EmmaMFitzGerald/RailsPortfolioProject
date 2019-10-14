@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook]
+  has_many :children
+  has_many :memories
+  has_many :children_with_memories, through: :memories, source: :child
    
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -1,0 +1,15 @@
+<div><%= @child.name %>'s Profile Page</div>
+
+<ul>
+<% if @child.memories.any? %>
+    <% @child.memories.each do |memory| %>
+    Memory: <%= memory.title %> <br>
+    Memory Category: <%= memory.category.name %><br>
+    Memory Details: <%= memory.content %><br>
+    <% end %>
+<% else %>
+        <%= @child.name %> doesn't have any memories yet!<br>
+<% end %>
+<br>
+<%= link_to "Create a Memory", new_child_memory_path(@child) %>
+</ul>
