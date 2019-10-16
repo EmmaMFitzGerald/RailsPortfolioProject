@@ -1,6 +1,7 @@
 class Memory < ApplicationRecord
     validates :title, presence: :true, length: {minimum: 2, maximum: 140 }
     validates :content, presence: :true, length: {maximum: 500} 
+    validates :name, presence: :true
   
     belongs_to :child
     belongs_to :user

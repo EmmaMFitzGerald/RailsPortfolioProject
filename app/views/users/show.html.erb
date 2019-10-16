@@ -1,4 +1,4 @@
-<%= @user.email %>'s Children</h4>
+<%= @user.name %>'s Children</h4>
 <ul>
     <% @children.each do |child| %>
     <li><%= link_to child.name, child_path(child) %></li>
@@ -17,4 +17,4 @@
 <p><%= link_to "Create a Child", new_child_path %>
 
 
-<%= link_to "Edit Your Profile", edit_user_password_path(@user)%>
+<%= link_to "Edit Your Profile", edit_user_registration_path(@user)%>

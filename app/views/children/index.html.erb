@@ -7,6 +7,6 @@ All Children
   <%= link_to 'Delete', child, method: :delete, data: { confirm: 'Are you sure' } %>
 </ul>
 <% end  %>
-
+<%= link_to "Your profile", user_path(current_user)%>
 Do you want to <%= link_to "add another child", new_child_path %>
 </div>
