@@ -1,6 +1,6 @@
 <% if @memories.any? %>
     <% @memories.each do |memory|%>
-        <%= memory.child.name %>
+        <%= link_to memory.child.name, memory.child %>
         <%= memory.title %>
         <%= memory.content %>
         <%= memory.memory_date %>

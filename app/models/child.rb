@@ -6,4 +6,7 @@ class Child < ApplicationRecord
     has_many :categories, through: :memories
     belongs_to :user
     validates :user_id, presence: :true
+
+    scope :search, -> (parameter) {where("lower(name) LIKE :search", search: "%#{parameter}%")   }
+
 end  

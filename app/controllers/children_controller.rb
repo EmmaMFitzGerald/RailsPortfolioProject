@@ -17,7 +17,7 @@ class ChildrenController < ApplicationController
         redirect_to(root_path, alert: "Empty field!") and return  
       else  
         @parameter = params[:search].downcase  
-        @results = Child.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")   
+        @results = Child.search(@parameter)
       end  
     end 
   

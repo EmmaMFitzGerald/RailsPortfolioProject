@@ -1,6 +1,16 @@
 <ul>
 <% @categories.each do |cat| %>
-<li><%= link_to cat.name, category_path(cat) %></li>
+<li><%= link_to cat.name, category_path(cat) %>
+
+<% if cat.children.any? %>
+<p>Children with memories in this category:</p> 
+<% end%>
+   <ul>
+    <% cat.children.each do |c| %>
+    <li><%= link_to c.name, c %></li>
+    <% end  %>
+    </ul>
+</li>
 <% end %>
 
 </ul>

@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook]
+  
+  validates_presence_of :name 
   has_many :children
   has_many :memories
   has_many :categories, through: :memories
