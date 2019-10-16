@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "children#index"
 
+  get '/search' => 'children#search', :as => 'search_page'
+
   resources :children do 
     resources :memories
   end 
