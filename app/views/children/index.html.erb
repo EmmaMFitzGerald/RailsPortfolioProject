@@ -1,7 +1,7 @@
 All Children
 <p><% @children.each do |child| %>
 <ul>
-  <li>Name: <%= link_to child.name, child_path(child) %> - Birthday: <%= child.birthday.strftime("%m/%d/%Y")%></li>
+  <li>Name: <%= link_to child.name, child_path(child) %> (<%= child.age(child.birthday) %> yr/s) - Birthday: <%= child.birthday.strftime("%m/%d/%Y")%></li>
   <%= link_to 'Edit', edit_child_path(child) %>
   <%= link_to 'Delete', child, method: :delete, data: { confirm: 'Are you sure' } %>
 </ul>

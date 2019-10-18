@@ -1,11 +1,15 @@
-<div><%= @child.name %>'s Profile Page</div>
+<p><%= @child.name %>'s Profile Page</p>
 
 <ul>
 <% if @child.memories.any? %>
     <% @child.memories.each do |memory| %>
-    Memory: <%= memory.title %> <br>
-    Memory Category: <%= memory.category.name %><br>
-    Memory Details: <%= memory.content %><br>
+    <ul>
+    <li> Memory: <%= memory.title %></li>
+        <ul>
+        <li>Memory Category: <%= memory.category.name %></li>
+        <li>Memory Details: <%= memory.content %></li>
+        </ul>
+    </ul>
     <% end %>
 <% else %>
         <%= @child.name %> doesn't have any memories yet!<br>
