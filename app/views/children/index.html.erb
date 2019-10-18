@@ -1,12 +1,13 @@
 All Children
-<%= link_to "Search Memories by Category", categories_path %>
-<% @children.each do |child| %>
+<p><% @children.each do |child| %>
 <ul>
-  <li>Name: <%= link_to child.name, child_path(child) %> - Birthday: <%= child.birthday %></li>
+  <li>Name: <%= link_to child.name, child_path(child) %> - Birthday: <%= child.birthday.strftime("%m/%d/%Y")%></li>
   <%= link_to 'Edit', edit_child_path(child) %>
   <%= link_to 'Delete', child, method: :delete, data: { confirm: 'Are you sure' } %>
 </ul>
 <% end  %>
-<%= link_to "Your profile", user_path(current_user)%>
-Do you want to <%= link_to "add another child", new_child_path %>
+</p>
+  <p><%= link_to "Your profile", user_path(current_user)%></p>
+  <p>Do you want to <%= link_to "add another child", new_child_path %></p>
+</ul>
 </div>

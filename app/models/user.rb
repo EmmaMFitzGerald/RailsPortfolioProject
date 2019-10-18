@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   devise :omniauthable, :omniauth_providers => [:facebook]
   
-  validates_presence_of :name 
+  validates_presence_of :name
+  validates :email, uniqueness: true
   has_many :children
   has_many :memories
   has_many :categories, through: :memories
