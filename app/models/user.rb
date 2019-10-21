@@ -6,22 +6,28 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook]
-  
-  validates_presence_of :name
+  before_save { self.first_name = first_name.titleize }
+  before_save { self.last_name = last_name.titleize }
+
   validates :email, uniqueness: true
   has_many :children
   has_many :memories
   has_many :categories, through: :memories
   has_many :children_with_memories, through: :memories, source: :child
 
-  def name=(s)
-    write_attribute(:name, s.to_s.titleize) # The to_s is in case you get nil/non-string
-  end
+  
+  # def titleize_name
+  #   first_name = self.first_name.titleize
+  #   last_name = self.last_name.titleize 
+  #   name = first_name + " " + last_name
+  # end
+
    
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.name = auth.info.first_name
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
       user.password = Devise.friendly_token[0,20]
     end      
   end

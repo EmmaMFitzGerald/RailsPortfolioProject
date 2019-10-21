@@ -46,14 +46,14 @@ class MemoriesController < ApplicationController
       end
     
       def destroy
-        @memory = Memory.find(params[:id])
+        @memory = Memory.find_by(:id => params[:id])
         @memory.destroy
-        redirect_to child_url
+        redirect_to @memory.child
       end
     
       private
     
       def memory_params
-        params.require(:memory).permit(:title, :content, :child_id, :user_id, category_attributes:[:name])
+        params.require(:memory).permit(:title, :content, :memory_date, :child_id, :user_id, category_attributes:[:name])
       end
 end

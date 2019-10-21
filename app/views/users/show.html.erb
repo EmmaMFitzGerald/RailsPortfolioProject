@@ -1,6 +1,6 @@
 
 <% if @user.children_with_memories.any? %>
-    <%= @user.name %>'s Children</h4>
+    <%= @user.first_name %>'s Children</h4>
         <ul>
             <% @children.each do |child| %>
             <li><%= link_to child.name, child_path(child) %></li>
@@ -14,7 +14,7 @@
         <% end %>
         </ul>
     <% else %>
-    <%= @user.name %> doesn't have any children yet!
+    <%= @user.first_name %> doesn't have any children yet!
  <% end %>
 
  <br>

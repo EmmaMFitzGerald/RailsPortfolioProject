@@ -2,5 +2,6 @@
 Memory: <%= @memory.title %><br>
 Memory Category: <%= @memory.category.name %><br>
 Memory Details: <%= @memory.content %><br>
-Date: <%= @memory.memory_date %><br>
-<%= link_to "Back to Child's Memories", child_path%>
+Date: <%= @memory.memory_date.strftime("%m/%d/%Y") %><br>
+<%= link_to "Delete Memory", child_memory_path(@memory.child), :method => :delete %>
+<%= link_to "Back to Child's Memories", child_path(@memory.child) %>

@@ -4,10 +4,12 @@
 <% if @child.memories.any? %>
     <% @child.memories.each do |memory| %>
     <ul>
-    <li> Memory: <%= memory.title %></li>
+    <li> Memory: <%= link_to memory.title, child_memory_path(memory) %></li>
         <ul>
         <li>Memory Category: <%= memory.category.name %></li>
         <li>Memory Details: <%= memory.content %></li>
+        <li>Memory Date: <%= memory.memory_date%>
+        <li><%= link_to "Delete Memory", child_memory_path(memory.child, memory), :method => :delete %></li>
         </ul>
     </ul>
     <% end %>
