@@ -38,8 +38,9 @@ class MemoriesController < ApplicationController
       end
     
       def update
+        @memory = Memory.find(params[:id])
         if @memory.update(memory_params)
-          redirect_to @memory
+          redirect_to child_memory_path(params[:child_id], @memory)
         else
           render :edit
         end

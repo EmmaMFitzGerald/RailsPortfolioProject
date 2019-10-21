@@ -4,7 +4,7 @@
 <% if @child.memories.any? %>
     <% @child.memories.each do |memory| %>
     <ul>
-    <li> Memory: <%= link_to memory.title, child_memory_path(memory) %></li>
+    <li> Memory: <%= link_to memory.title, child_memory_path(@child, memory) %></li>
         <ul>
         <li>Memory Category: <%= memory.category.name %></li>
         <li>Memory Details: <%= memory.content %></li>
